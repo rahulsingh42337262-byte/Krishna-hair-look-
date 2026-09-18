@@ -1,25 +1,12 @@
-KRISHNA HAIR LOOK — FRONTEND
+KRISHNA HAIR LOOK — UPDATED FRONTEND
 
-Files:
-- index.html
-- style.css
-- script.js
-- assets/salon-storefront.jpg
-- assets/krishna-logo.jpg
+Updated features:
+- Salon storefront photo added
+- Suresh Kotiya photo added
+- Govind Sen photo added
+- Krishna Hair Look logo added
+- Booking confirmation slip appears after submitting the form
+- Booking ID, customer, mobile, service, date, time and amount shown on slip
+- Print / Save PDF button included
 
-Open index.html in a browser to preview the website.
-
-Current approved prices:
-- Shaving: ₹50
-- Haircut: ₹70
-- Hair Colour: ₹100
-
-Next development phase:
-1. Real database
-2. Admin panel
-3. Real appointment availability
-4. WhatsApp confirmation
-5. Razorpay payment
-6. QR code
-7. Exact address / Google Maps
-8. Owner photos and final gallery
+Note: This is still a frontend demo. Real database, admin panel, payment and WhatsApp confirmation need to be connected separately.

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Krishna Hair Look — professional hair and grooming services." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Krishna Hair Look — professional hair and grooming services.">
   <title>Krishna Hair Look | Style That Defines You</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="topbar">
@@ -67,13 +67,13 @@
       <div class="section-heading">
         <p class="eyebrow">WHAT WE DO</p>
         <h2>Services & <span>Price List</span></h2>
-        <p>Simple pricing for the services you need. Choose a service and book your preferred time.</p>
+        <p>Choose a service and book your preferred time.</p>
       </div>
       <div class="service-grid">
-        <article class="service-card"><div class="icon">✂️</div><h3>Haircut</h3><strong>₹70</strong><p>Classic and modern haircut.</p><a href="#booking">Book Now →</a></article>
-        <article class="service-card"><div class="icon">🪒</div><h3>Shaving</h3><strong>₹50</strong><p>Clean, comfortable shave.</p><a href="#booking">Book Now →</a></article>
-        <article class="service-card"><div class="icon">🎨</div><h3>Hair Colour</h3><strong>₹100</strong><p>Fresh colour and grooming.</p><a href="#booking">Book Now →</a></article>
-        <article class="service-card"><div class="icon">💆</div><h3>Hair Spa</h3><strong>Contact Us</strong><p>Hair care and treatment.</p><a href="#booking">Book Now →</a></article>
+        <article class="service-card"><div class="icon">✂️</div><h3>Haircut</h3><strong>₹70</strong><p>Classic and modern haircut.</p><a href="#booking" data-service="Haircut">Book Now →</a></article>
+        <article class="service-card"><div class="icon">🪒</div><h3>Shaving</h3><strong>₹50</strong><p>Clean, comfortable shave.</p><a href="#booking" data-service="Shaving">Book Now →</a></article>
+        <article class="service-card"><div class="icon">🎨</div><h3>Hair Colour</h3><strong>₹100</strong><p>Fresh colour and grooming.</p><a href="#booking" data-service="Hair Colour">Book Now →</a></article>
+        <article class="service-card"><div class="icon">💆</div><h3>Hair Spa</h3><strong>Contact Us</strong><p>Hair care and treatment.</p><a href="#booking" data-service="Hair Spa">Book Now →</a></article>
       </div>
     </section>
 
@@ -95,10 +95,15 @@
         <h2>Meet Our <span>Experts</span></h2>
       </div>
       <div class="team-grid">
-        <div class="person"><div class="avatar">SK</div><h3>Suresh Kotiya</h3><p>Shop Owner</p></div>
-        <div class="person"><div class="avatar">GS</div><h3>Govind Sen</h3><p>Shop Owner</p></div>
+        <div class="person">
+          <img class="person-photo" src="assets/suresh-kotiya.jpg" alt="Suresh Kotiya">
+          <h3>Suresh Kotiya</h3><p>Shop Owner</p>
+        </div>
+        <div class="person">
+          <img class="person-photo" src="assets/govind-sen.jpg" alt="Govind Sen">
+          <h3>Govind Sen</h3><p>Shop Owner</p>
+        </div>
       </div>
-      <p class="note">Owner photos can be added here when you upload the two original photos.</p>
     </section>
 
     <section id="gallery" class="gallery">
@@ -107,10 +112,10 @@
         <h2>Style In Every <span>Frame</span></h2>
       </div>
       <div class="gallery-grid">
-        <img src="assets/salon-storefront.jpg" alt="Salon storefront">
-        <div class="gallery-placeholder">Haircut<br><small>Your salon work photo</small></div>
-        <div class="gallery-placeholder">Hair Colour<br><small>Your salon work photo</small></div>
-        <div class="gallery-placeholder">Grooming<br><small>Your salon work photo</small></div>
+        <img src="assets/salon-storefront.jpg" alt="Krishna Hair Look salon storefront">
+        <img src="assets/suresh-kotiya.jpg" alt="Suresh Kotiya">
+        <img src="assets/govind-sen.jpg" alt="Govind Sen">
+        <img src="assets/krishna-logo.jpg" alt="Krishna Hair Look logo">
       </div>
     </section>
 
@@ -118,33 +123,65 @@
       <div class="booking-copy">
         <p class="eyebrow">BOOK YOUR APPOINTMENT</p>
         <h2>Quick & Easy <span>Booking</span></h2>
-        <p>Select your service, date and time. The form is ready for the future database/WhatsApp/payment integration.</p>
+        <p>Fill the details below. After you confirm, a booking slip will appear immediately with your booking ID, service, date, time and customer details.</p>
       </div>
+
       <form id="bookingForm" class="booking-form">
         <label>Service
-          <select required><option value="">Select service</option><option>Haircut — ₹70</option><option>Shaving — ₹50</option><option>Hair Colour — ₹100</option><option>Hair Spa — Contact Us</option></select>
+          <select id="service" required>
+            <option value="">Select service</option>
+            <option value="Haircut" data-price="70">Haircut — ₹70</option>
+            <option value="Shaving" data-price="50">Shaving — ₹50</option>
+            <option value="Hair Colour" data-price="100">Hair Colour — ₹100</option>
+            <option value="Hair Spa" data-price="0">Hair Spa — Contact Us</option>
+          </select>
         </label>
-        <label>Date<input type="date" required></label>
-        <label>Time<input type="time" required></label>
-        <label>Full Name<input type="text" placeholder="Your name" required></label>
-        <label>Mobile Number<input type="tel" placeholder="10-digit mobile number" pattern="[0-9]{10}" required></label>
+        <label>Date<input id="date" type="date" required></label>
+        <label>Time<input id="time" type="time" required></label>
+        <label>Full Name<input id="name" type="text" placeholder="Your name" required></label>
+        <label>Mobile Number<input id="mobile" type="tel" placeholder="10-digit mobile number" pattern="[0-9]{10}" required></label>
         <button class="btn gold" type="submit">Confirm Appointment →</button>
         <p id="formMessage" class="form-message"></p>
       </form>
     </section>
-
-    <section id="contact" class="contact">
-      <div>
-        <p class="eyebrow">GET IN TOUCH</p>
-        <h2>Contact <span>Krishna Hair Look</span></h2>
-        <p>📞 Call / WhatsApp: <b>+91 XXXXX XXXXX</b></p>
-        <p>✉️ Email: <b>krishnahairlook@gmail.com</b></p>
-        <p>📍 Main Road, Near Bus Stand, Your City</p>
-        <p>🕘 Mon–Sun · 9:00 AM – 9:00 PM</p>
-      </div>
-      <div class="map-box">📍<br><b>Google Maps</b><br><small>Add your exact salon location later</small></div>
-    </section>
   </main>
+
+  <div id="slipModal" class="slip-modal" aria-hidden="true">
+    <div class="slip-card" role="dialog" aria-modal="true" aria-labelledby="slipTitle">
+      <button id="closeSlip" class="close-slip" aria-label="Close">×</button>
+      <div class="slip-head">
+        <img src="assets/krishna-logo.jpg" alt="Krishna Hair Look logo">
+        <div><h2 id="slipTitle">Booking Confirmed</h2><p>KRISHNA HAIR LOOK</p></div>
+      </div>
+      <div class="slip-status">✓ APPOINTMENT SLIP</div>
+      <div class="slip-details">
+        <div><span>Booking ID</span><b id="slipId"></b></div>
+        <div><span>Customer</span><b id="slipName"></b></div>
+        <div><span>Mobile</span><b id="slipMobile"></b></div>
+        <div><span>Service</span><b id="slipService"></b></div>
+        <div><span>Date</span><b id="slipDate"></b></div>
+        <div><span>Time</span><b id="slipTime"></b></div>
+        <div><span>Amount</span><b id="slipAmount"></b></div>
+      </div>
+      <p class="slip-note">Please keep this slip for your appointment. Payment and WhatsApp confirmation can be connected in the next step.</p>
+      <div class="slip-actions">
+        <button id="printSlip" class="btn gold" type="button">🖨️ Print / Save PDF</button>
+        <button id="closeSlip2" class="btn outline" type="button">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <section id="contact" class="contact">
+    <div>
+      <p class="eyebrow">GET IN TOUCH</p>
+      <h2>Contact <span>Krishna Hair Look</span></h2>
+      <p>📞 Call / WhatsApp: <b>+91 XXXXX XXXXX</b></p>
+      <p>✉️ Email: <b>krishnahairlook@gmail.com</b></p>
+      <p>📍 Main Road, Near Bus Stand, Your City</p>
+      <p>🕘 Mon–Sun · 9:00 AM – 9:00 PM</p>
+    </div>
+    <div class="map-box">📍<br><b>Google Maps</b><br><small>Add your exact salon location later</small></div>
+  </section>
 
   <footer>
     <div class="footer-brand">KRISHNA <span>HAIR LOOK</span></div>

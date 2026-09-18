@@ -1,1 +1,123 @@
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#080a0c;color:#f5f1e8;font-family:Inter,Arial,sans-serif}.topbar{background:#050607;border-bottom:1px solid #3a2c12;color:#d8d2c7;padding:9px 6%;display:flex;gap:28px;justify-content:space-between;font-size:12px}.social{color:#dcb45b}.nav{position:sticky;top:0;z-index:20;background:rgba(7,9,10,.96);border-bottom:1px solid #3a2c12;padding:10px 6%;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(10px)}.brand{display:flex;align-items:center;gap:10px;color:#f0c86a;text-decoration:none;font-family:"Cormorant Garamond",serif;font-size:26px;font-weight:700;line-height:.8}.brand img{width:62px;height:44px;object-fit:cover;object-position:center;border-radius:6px}.brand small{display:block;color:#fff;letter-spacing:4px;font-family:Inter;font-size:8px;margin-top:6px}.nav nav{display:flex;align-items:center;gap:25px}.nav nav a{color:#f4f0e8;text-decoration:none;font-size:14px}.nav nav a:hover{color:#efbf5d}.nav-cta,.btn.gold{background:linear-gradient(135deg,#f7d27c,#c78c25);color:#090909!important;border:0!important}.nav-cta{padding:12px 18px;border-radius:30px;font-weight:700}.menu-toggle{display:none;background:none;border:0;color:#f2c86e;font-size:28px}.hero{min-height:650px;display:grid;grid-template-columns:1fr 1.05fr;background:radial-gradient(circle at 30% 30%,#20170b,#080a0c 55%);overflow:hidden}.hero-copy{padding:80px 7%;display:flex;flex-direction:column;justify-content:center}.eyebrow{color:#e8b952;font-weight:700;letter-spacing:2px;font-size:13px;margin:0 0 8px}.hero h1{font-family:"Cormorant Garamond",serif;font-size:78px;line-height:.78;margin:10px 0}.hero h1 span{color:#fff}.script{font-family:"Cormorant Garamond",serif;color:#e9bb59;font-size:30px;font-style:italic;margin:25px 0 5px}.lead{font-size:17px;color:#c8c3ba;max-width:520px}.actions{display:flex;gap:14px;margin:25px 0}.btn{display:inline-block;padding:15px 22px;border-radius:30px;text-decoration:none;font-weight:700;text-align:center;cursor:pointer}.outline{border:1px solid #d9ad4c;color:#fff;background:transparent}.quick-services{display:flex;gap:18px;flex-wrap:wrap;margin-top:25px;color:#e0c27c;font-size:13px}.hero-image{position:relative;min-height:650px}.hero-image img{width:100%;height:100%;object-fit:cover;filter:saturate(.9)}.hero-image:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#080a0c 0%,transparent 20%,transparent 80%,#080a0c 100%)}.hero-badge{position:absolute;right:7%;bottom:45px;z-index:2;font-family:"Cormorant Garamond",serif;font-size:29px;color:#eac166;font-style:italic}.hero-badge span{color:#fff}.trust{display:grid;grid-template-columns:repeat(4,1fr);background:#f4efe6;color:#171717;padding:22px 7%;gap:20px}.trust div{border-right:1px solid #d3c7b4;padding:4px 20px}.trust div:last-child{border:0}.trust b,.trust span{display:block}.trust span{font-size:12px;color:#666;margin-top:4px}.section{padding:85px 7%}.services{background:#f6f0e5;color:#151515}.section-heading{max-width:650px;margin-bottom:35px}.section-heading h2,.about h2,.booking h2,.contact h2{font-family:"Cormorant Garamond",serif;font-size:48px;margin:0 0 12px}.section-heading h2 span,.about h2 span,.booking h2 span,.contact h2 span{color:#bf8526}.section-heading p{color:#666;line-height:1.7}.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.service-card{background:#0b0d0f;color:#f6f0e5;border:1px solid #473717;border-radius:15px;padding:25px;min-height:245px;box-shadow:0 12px 35px #0002}.service-card .icon{font-size:30px;color:#efbf5b}.service-card h3{font-size:20px;margin:18px 0 6px}.service-card strong{font-size:22px;color:#e5b752}.service-card p{font-size:13px;color:#bbb;min-height:35px}.service-card a{display:inline-block;color:#0b0d0f;background:#efc363;padding:9px 15px;border-radius:20px;text-decoration:none;font-size:12px;font-weight:700}.about{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;padding:90px 7%;background:#0d1012}.about p:not(.eyebrow){color:#bbb;line-height:1.8}.about img{width:100%;height:400px;object-fit:cover;border-radius:18px;border:1px solid #6d5120}.mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:25px;color:#e6be62}.team{background:#f6f0e5;color:#151515;text-align:center}.team .section-heading{margin-left:auto;margin-right:auto}.team-grid{display:grid;grid-template-columns:repeat(2,240px);justify-content:center;gap:25px}.person{background:#101214;color:#fff;border:1px solid #755823;border-radius:15px;padding:25px}.avatar{width:130px;height:130px;margin:auto;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#2a2a2a,#b27d25);font-size:38px;font-family:"Cormorant Garamond",serif}.person h3{margin-bottom:5px}.person p{color:#e0b85b;margin-top:0}.note{font-size:12px;color:#777;margin-top:25px}.gallery{padding:80px 7%;background:#0a0c0e}.gallery-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:15px}.gallery-grid img,.gallery-placeholder{width:100%;height:230px;border-radius:14px;object-fit:cover}.gallery-placeholder{display:grid;place-items:center;background:linear-gradient(135deg,#1a1a1a,#3c2b12);border:1px solid #60491f;color:#e9c167;font-size:25px;font-family:"Cormorant Garamond",serif;text-align:center}.gallery-placeholder small{font-family:Inter;font-size:11px;color:#bbb}.booking{padding:80px 7%;display:grid;grid-template-columns:1fr 1.1fr;gap:45px;background:#f6f0e5;color:#171717}.booking-copy p:not(.eyebrow){color:#666;line-height:1.7}.booking-form{background:#0c0f11;color:#fff;padding:30px;border-radius:18px;border:1px solid #644b20;display:grid;grid-template-columns:1fr 1fr;gap:15px}.booking-form label{font-size:12px;color:#e4c069}.booking-form label:first-child,.booking-form button,.form-message{grid-column:1/-1}.booking-form input,.booking-form select{width:100%;margin-top:7px;padding:13px;border-radius:8px;border:1px solid #55482e;background:#151719;color:#fff}.form-message{font-size:13px;color:#8ee39a;margin:0}.contact{padding:70px 7%;display:grid;grid-template-columns:1fr 1fr;gap:40px;background:#0a0c0e}.contact p:not(.eyebrow){color:#bbb}.map-box{min-height:230px;border:1px dashed #6b5226;border-radius:15px;display:grid;place-items:center;text-align:center;color:#e6bd61;background:linear-gradient(135deg,#101316,#17120a)}footer{text-align:center;padding:35px 7%;border-top:1px solid #4b391b;color:#aaa}.footer-brand{font-family:"Cormorant Garamond",serif;color:#e7bc5d;font-size:30px}.footer-brand span{display:block;font-family:Inter;letter-spacing:5px;font-size:10px;color:#fff}@media(max-width:900px){.topbar{display:none}.menu-toggle{display:block}.nav nav{display:none;position:absolute;top:65px;left:0;right:0;background:#080a0c;padding:20px;flex-direction:column}.nav nav.open{display:flex}.hero{grid-template-columns:1fr}.hero-image{min-height:380px}.hero-copy{padding:65px 7%}.hero h1{font-size:58px}.trust,.service-grid{grid-template-columns:1fr 1fr}.about,.booking,.contact{grid-template-columns:1fr}.gallery-grid{grid-template-columns:1fr 1fr}.gallery-grid img{grid-column:1/-1}.team-grid{grid-template-columns:1fr 1fr}.booking-form{grid-template-columns:1fr}}@media(max-width:560px){.trust,.service-grid,.team-grid,.gallery-grid{grid-template-columns:1fr}.trust div{border-right:0;border-bottom:1px solid #d3c7b4;padding:12px}.hero h1{font-size:48px}.section-heading h2,.about h2,.booking h2,.contact h2{font-size:40px}.actions{flex-direction:column}.gallery-grid img,.gallery-placeholder{height:220px}}
+
+
+/* Updated team photos, gallery and booking slip */
+.person-photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid rgba(212,175,55,.35);
+  display: block;
+  margin-bottom: 16px;
+}
+.gallery-grid img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid rgba(212,175,55,.25);
+}
+.slip-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.78);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  z-index: 9999;
+}
+.slip-modal.show { display: flex; }
+.slip-card {
+  position: relative;
+  width: min(560px, 100%);
+  max-height: 92vh;
+  overflow: auto;
+  background: #111;
+  color: #f5f0e4;
+  border: 1px solid #c8a951;
+  border-radius: 22px;
+  padding: 26px;
+  box-shadow: 0 24px 80px rgba(0,0,0,.55);
+}
+.close-slip {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  border: 0;
+  background: transparent;
+  color: #d8b55a;
+  font-size: 32px;
+  cursor: pointer;
+}
+.slip-head {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding-right: 30px;
+  border-bottom: 1px solid rgba(212,175,55,.25);
+  padding-bottom: 16px;
+}
+.slip-head img {
+  width: 74px;
+  height: 74px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.slip-head h2 { margin: 0; }
+.slip-head p { margin: 4px 0 0; letter-spacing: 2px; color: #d8b55a; }
+.slip-status {
+  display: inline-block;
+  margin: 18px 0;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(212,175,55,.12);
+  color: #e0bd63;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.slip-details {
+  display: grid;
+  gap: 1px;
+  background: rgba(212,175,55,.18);
+  border: 1px solid rgba(212,175,55,.18);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.slip-details div {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 12px 14px;
+  background: #171717;
+}
+.slip-details span { color: #aaa; }
+.slip-details b { text-align: right; }
+.slip-note { color: #aaa; font-size: 14px; line-height: 1.6; }
+.slip-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+@media (max-width: 600px) {
+  .slip-card { padding: 20px; }
+  .slip-details div { flex-direction: column; gap: 3px; }
+  .slip-details b { text-align: left; }
+}
+@media print {
+  body > *:not(#slipModal) { display: none !important; }
+  #slipModal {
+    display: flex !important;
+    position: static;
+    background: #fff;
+    padding: 0;
+  }
+  .slip-card {
+    box-shadow: none;
+    border: 1px solid #333;
+    color: #111;
+    max-height: none;
+    width: 100%;
+  }
+  .close-slip, .slip-actions { display: none !important; }
+  .slip-details div { background: #fff; color: #111; }
+  .slip-details span { color: #555; }
+  .slip-note { color: #444; }
+}
