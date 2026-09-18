@@ -121,3 +121,10 @@
   .slip-details span { color: #555; }
   .slip-note { color: #444; }
 }
+
+.payment-step { margin: 20px 0; }
+.payment-box { padding: 22px; border: 1px solid rgba(212,175,55,.45); border-radius: 14px; background: #111; text-align:center; }
+.payment-box h3 { margin-top:0; }
+.payment-amount { font-size: 18px; margin: 14px 0; }
+.payment-status { margin-top: 10px; font-size: 14px; }
+.payment-error { color: #ffb4b4; }

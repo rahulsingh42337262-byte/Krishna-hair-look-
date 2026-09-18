@@ -147,7 +147,18 @@
   </main>
 
   <div id="slipModal" class="slip-modal" aria-hidden="true">
-    <div class="slip-card" role="dialog" aria-modal="true" aria-labelledby="slipTitle">
+    
+<div id="paymentStep" class="payment-step" style="display:none;">
+  <div class="payment-box">
+    <h3>💳 Payment Required</h3>
+    <p>Please complete the payment before your booking slip is generated.</p>
+    <div class="payment-amount">Amount: <strong id="paymentAmount">₹0</strong></div>
+    <button type="button" id="payNowBtn" class="btn btn-primary">Pay Now</button>
+    <p id="paymentStatus" class="payment-status"></p>
+  </div>
+</div>
+
+<div class="slip-card" role="dialog" aria-modal="true" aria-labelledby="slipTitle">
       <button id="closeSlip" class="close-slip" aria-label="Close">×</button>
       <div class="slip-head">
         <img src="KRISHNA-LOGO.JPG" alt="Krishna Hair Look logo">
@@ -190,5 +201,38 @@
   </footer>
 
   <script src="script.js"></script>
+<script>
+
+/* Payment gate: booking slip is shown only after payment success.
+   For REAL payments, connect Razorpay Checkout with the salon owner's Razorpay Key ID.
+   Never put a Razorpay Secret Key in frontend code. */
+(function () {
+  let paymentCompleted = false;
+  const paymentStep = document.getElementById("paymentStep");
+  const payNowBtn = document.getElementById("payNowBtn");
+  const paymentAmount = document.getElementById("paymentAmount");
+  const paymentStatus = document.getElementById("paymentStatus");
+
+  window.startPayment = function(amount, onSuccess) {
+    paymentCompleted = false;
+    if (paymentAmount) paymentAmount.textContent = "₹" + amount;
+    if (paymentStep) paymentStep.style.display = "block";
+
+    if (payNowBtn) {
+      payNowBtn.onclick = function() {
+        paymentStatus.textContent = "Payment gateway setup required for live payments.";
+        paymentStatus.className = "payment-status payment-error";
+        // Prevent the slip from appearing without a real payment confirmation.
+        // A real Razorpay Checkout success handler should call onSuccess().
+      };
+    }
+  };
+
+  window.isPaymentCompleted = function() {
+    return paymentCompleted;
+  };
+})();
+
+</script>
 </body>
 </html>
