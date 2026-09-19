@@ -1,238 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Krishna Hair Look — professional hair and grooming services.">
-  <title>Krishna Hair Look | Style That Defines You</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Krishna Hair Look — Online Booking</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
-  <div class="topbar">
-    <div>📍 Main Road, Near Bus Stand</div>
-    <div>📞 Call / WhatsApp</div>
-    <div>✉️ krishnahairlook@gmail.com</div>
-    <div class="social">Instagram · Facebook · YouTube</div>
-  </div>
-
-  <header class="nav">
-    <a class="brand" href="#home">
-      <img src="KRISHNA-LOGO.JPG" alt="Krishna Hair Look logo">
-      <span>KRISHNA <small>HAIR LOOK</small></span>
-    </a>
-    <button class="menu-toggle" aria-label="Open menu">☰</button>
-    <nav id="navLinks">
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#team">Our Team</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
-      <a class="nav-cta" href="#booking">Book Appointment</a>
-    </nav>
-  </header>
-
-  <main>
-    <section id="home" class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow">WELCOME TO</p>
-        <h1>KRISHNA<br><span>HAIR LOOK</span></h1>
-        <p class="script">Style That Defines You</p>
-        <p class="lead">Professional hair & grooming services for a fresh, confident look.</p>
-        <div class="actions">
-          <a class="btn gold" href="#booking">📅 Book Appointment</a>
-          <a class="btn outline" href="https://wa.me/" target="_blank" rel="noopener">💬 WhatsApp Us</a>
-        </div>
-        <div class="quick-services">
-          <span>✂️ Haircut</span><span>🪒 Shaving</span><span>🎨 Hair Colour</span><span>💆 Hair Spa</span>
-        </div>
-      </div>
-      <div class="hero-image">
-        <img src="SALON-STOREFRONT.JPG" alt="Krishna Hair Look salon storefront">
-        <div class="hero-badge">GOOD HAIR<br><span>GOOD MOOD</span></div>
-      </div>
-    </section>
-
-    <section class="trust">
-      <div><b>✓ Hygienic & Safe</b><span>Clean environment</span></div>
-      <div><b>★ Expert Service</b><span>Professional grooming</span></div>
-      <div><b>◷ On-Time Service</b><span>Less waiting</span></div>
-      <div><b>₹ Affordable</b><span>Great value</span></div>
-    </section>
-
-    <section id="services" class="section services">
-      <div class="section-heading">
-        <p class="eyebrow">WHAT WE DO</p>
-        <h2>Services & <span>Price List</span></h2>
-        <p>Choose a service and book your preferred time.</p>
-      </div>
-      <div class="service-grid">
-        <article class="service-card"><div class="icon">✂️</div><h3>Haircut</h3><strong>₹70</strong><p>Classic and modern haircut.</p><a href="#booking" data-service="Haircut">Book Now →</a></article>
-        <article class="service-card"><div class="icon">🪒</div><h3>Shaving</h3><strong>₹50</strong><p>Clean, comfortable shave.</p><a href="#booking" data-service="Shaving">Book Now →</a></article>
-        <article class="service-card"><div class="icon">🎨</div><h3>Hair Colour</h3><strong>₹100</strong><p>Fresh colour and grooming.</p><a href="#booking" data-service="Hair Colour">Book Now →</a></article>
-        <article class="service-card"><div class="icon">💆</div><h3>Hair Spa</h3><strong>Contact Us</strong><p>Hair care and treatment.</p><a href="#booking" data-service="Hair Spa">Book Now →</a></article>
-      </div>
-    </section>
-
-    <section id="about" class="about">
-      <div>
-        <p class="eyebrow">ABOUT US</p>
-        <h2>More Than Just<br><span>A Haircut</span></h2>
-        <p>Krishna Hair Look is a local salon focused on hair styling, shaving, colour and grooming in a clean, welcoming environment.</p>
-        <div class="mini-grid">
-          <span>✓ Clean & Safe</span><span>✓ Expert Service</span><span>✓ Affordable Prices</span><span>✓ Personal Care</span>
-        </div>
-      </div>
-      <img src="SALON-STOREFRONT.JPG" alt="Krishna Hair Look exterior">
-    </section>
-
-    <section id="team" class="section team">
-      <div class="section-heading">
-        <p class="eyebrow">OUR TEAM / OWNERS</p>
-        <h2>Meet Our <span>Experts</span></h2>
-      </div>
-      <div class="team-grid">
-        <div class="person">
-          <img class="person-photo" src="SURESH-KOTIYA.JPG" alt="Suresh Kotiya">
-          <h3>Suresh Kotiya</h3><p>Shop Owner</p>
-        </div>
-        <div class="person">
-          <img class="person-photo" src="GOVIND-SEN.JPG" alt="Govind Sen">
-          <h3>Govind Sen</h3><p>Shop Owner</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="gallery" class="gallery">
-      <div class="section-heading">
-        <p class="eyebrow">OUR GALLERY</p>
-        <h2>Style In Every <span>Frame</span></h2>
-      </div>
-      <div class="gallery-grid">
-        <img src="SALON-STOREFRONT.JPG" alt="Krishna Hair Look salon storefront">
-        <img src="SURESH-KOTIYA.JPG" alt="Suresh Kotiya">
-        <img src="GOVIND-SEN.JPG" alt="Govind Sen">
-        <img src="KRISHNA-LOGO.JPG" alt="Krishna Hair Look logo">
-      </div>
-    </section>
-
-    <section id="booking" class="booking">
-      <div class="booking-copy">
-        <p class="eyebrow">BOOK YOUR APPOINTMENT</p>
-        <h2>Quick & Easy <span>Booking</span></h2>
-        <p>Fill the details below. After you confirm, a booking slip will appear immediately with your booking ID, service, date, time and customer details.</p>
-      </div>
-
-      <form id="bookingForm" class="booking-form">
-        <label>Service
-          <select id="service" required>
-            <option value="">Select service</option>
-            <option value="Haircut" data-price="70">Haircut — ₹70</option>
-            <option value="Shaving" data-price="50">Shaving — ₹50</option>
-            <option value="Hair Colour" data-price="100">Hair Colour — ₹100</option>
-            <option value="Hair Spa" data-price="0">Hair Spa — Contact Us</option>
-          </select>
-        </label>
-        <label>Date<input id="date" type="date" required></label>
-        <label>Time<input id="time" type="time" required></label>
-        <label>Full Name<input id="name" type="text" placeholder="Your name" required></label>
-        <label>Mobile Number<input id="mobile" type="tel" placeholder="10-digit mobile number" pattern="[0-9]{10}" required></label>
-        <button class="btn gold" type="submit">Confirm Appointment →</button>
-        <p id="formMessage" class="form-message"></p>
-      </form>
-    </section>
-  </main>
-
-  <div id="slipModal" class="slip-modal" aria-hidden="true">
-    
-<div id="paymentStep" class="payment-step" style="display:none;">
-  <div class="payment-box">
-    <h3>💳 Payment Required</h3>
-    <p>Please complete the payment before your booking slip is generated.</p>
-    <div class="payment-amount">Amount: <strong id="paymentAmount">₹0</strong></div>
-    <button type="button" id="payNowBtn" class="btn btn-primary">Pay Now</button>
-    <p id="paymentStatus" class="payment-status"></p>
-  </div>
-</div>
-
-<div class="slip-card" role="dialog" aria-modal="true" aria-labelledby="slipTitle">
-      <button id="closeSlip" class="close-slip" aria-label="Close">×</button>
-      <div class="slip-head">
-        <img src="KRISHNA-LOGO.JPG" alt="Krishna Hair Look logo">
-        <div><h2 id="slipTitle">Booking Confirmed</h2><p>KRISHNA HAIR LOOK</p></div>
-      </div>
-      <div class="slip-status">✓ APPOINTMENT SLIP</div>
-      <div class="slip-details">
-        <div><span>Booking ID</span><b id="slipId"></b></div>
-        <div><span>Customer</span><b id="slipName"></b></div>
-        <div><span>Mobile</span><b id="slipMobile"></b></div>
-        <div><span>Service</span><b id="slipService"></b></div>
-        <div><span>Date</span><b id="slipDate"></b></div>
-        <div><span>Time</span><b id="slipTime"></b></div>
-        <div><span>Amount</span><b id="slipAmount"></b></div>
-      </div>
-      <p class="slip-note">Please keep this slip for your appointment. Payment and WhatsApp confirmation can be connected in the next step.</p>
-      <div class="slip-actions">
-        <button id="printSlip" class="btn gold" type="button">🖨️ Print / Save PDF</button>
-        <button id="closeSlip2" class="btn outline" type="button">Close</button>
-      </div>
-    </div>
-  </div>
-
-  <section id="contact" class="contact">
+<header class="topbar"><div>✂️ Krishna Hair Look</div><a href="admin.html">Admin</a></header>
+<main>
+  <section class="hero">
     <div>
-      <p class="eyebrow">GET IN TOUCH</p>
-      <h2>Contact <span>Krishna Hair Look</span></h2>
-      <p>📞 Call / WhatsApp: <b>+91 XXXXX XXXXX</b></p>
-      <p>✉️ Email: <b>krishnahairlook@gmail.com</b></p>
-      <p>📍 Main Road, Near Bus Stand, Your City</p>
-      <p>🕘 Mon–Sun · 9:00 AM – 9:00 PM</p>
+      <span class="eyebrow">KRISHNA HAIR LOOK</span>
+      <h1>Style That Defines You</h1>
+      <p>Online booking with automatic time-slot protection.</p>
+      <a class="btn gold" href="#booking">Book Appointment</a>
     </div>
-    <div class="map-box">📍<br><b>Google Maps</b><br><small>Add your exact salon location later</small></div>
   </section>
 
-  <footer>
-    <div class="footer-brand">KRISHNA <span>HAIR LOOK</span></div>
-    <p>Style That Defines You</p>
-    <p>© 2026 Krishna Hair Look. All Rights Reserved.</p>
-  </footer>
+  <section class="services">
+    <h2>Our Services</h2>
+    <div class="cards">
+      <button class="service-card" data-service="Shaving" data-price="50"><b>Shaving</b><span>₹50</span></button>
+      <button class="service-card" data-service="Haircut" data-price="70"><b>Haircut</b><span>₹70</span></button>
+      <button class="service-card" data-service="Hair Colour" data-price="100"><b>Hair Colour</b><span>₹100</span></button>
+    </div>
+  </section>
 
-  <script src="script.js"></script>
-<script>
+  <section id="booking" class="booking-wrap">
+    <div class="booking-info">
+      <span class="eyebrow">BOOK YOUR APPOINTMENT</span>
+      <h2>Choose service, date & time</h2>
+      <p>🟢 Available &nbsp; 🔴 Booked &nbsp; ⚪ Closed</p>
+      <div id="notice" class="notice hidden"></div>
+    </div>
 
-/* Payment gate: booking slip is shown only after payment success.
-   For REAL payments, connect Razorpay Checkout with the salon owner's Razorpay Key ID.
-   Never put a Razorpay Secret Key in frontend code. */
-(function () {
-  let paymentCompleted = false;
-  const paymentStep = document.getElementById("paymentStep");
-  const payNowBtn = document.getElementById("payNowBtn");
-  const paymentAmount = document.getElementById("paymentAmount");
-  const paymentStatus = document.getElementById("paymentStatus");
+    <form id="bookingForm" class="booking-card">
+      <label>Service
+        <select id="service" required>
+          <option value="">Select service</option>
+          <option value="Shaving" data-price="50">Shaving — ₹50</option>
+          <option value="Haircut" data-price="70">Haircut — ₹70</option>
+          <option value="Hair Colour" data-price="100">Hair Colour — ₹100</option>
+        </select>
+      </label>
 
-  window.startPayment = function(amount, onSuccess) {
-    paymentCompleted = false;
-    if (paymentAmount) paymentAmount.textContent = "₹" + amount;
-    if (paymentStep) paymentStep.style.display = "block";
+      <label>Date
+        <input id="date" type="date" required>
+      </label>
 
-    if (payNowBtn) {
-      payNowBtn.onclick = function() {
-        paymentStatus.textContent = "Payment gateway setup required for live payments.";
-        paymentStatus.className = "payment-status payment-error";
-        // Prevent the slip from appearing without a real payment confirmation.
-        // A real Razorpay Checkout success handler should call onSuccess().
-      };
-    }
-  };
+      <label>Available Time
+        <div id="slots" class="slots"></div>
+      </label>
+      <input id="time" type="hidden" required>
 
-  window.isPaymentCompleted = function() {
-    return paymentCompleted;
-  };
-})();
+      <label>Full Name
+        <input id="name" required placeholder="Your name">
+      </label>
 
-</script>
+      <label>Mobile Number
+        <input id="mobile" required inputmode="numeric" pattern="[0-9]{10}" maxlength="10" placeholder="10 digit mobile">
+      </label>
+
+      <div class="payment-box">
+        <b>Payment</b>
+        <p>UPI: <strong>gsain16@ibl</strong></p>
+        <p class="small">Customer can pay using any UPI app. Automatic payment verification requires a payment gateway.</p>
+      </div>
+      <div class="summary"><span>Selected</span><strong id="summaryText">—</strong></div>
+      <button class="btn gold wide" type="submit">Confirm Booking</button>
+      <p class="small">UPI ID: gsain16@ibl. Automatic payment verification requires a payment gateway.</p>
+    </form>
+  </section>
+</main>
+
+<div id="successModal" class="modal hidden">
+  <div class="modal-card">
+    <h2>✅ Booking Confirmed</h2>
+    <p id="successText"></p>
+    <button class="btn gold" onclick="closeModal()">Done</button>
+  </div>
+</div>
+<script src="app.js"></script>
 </body>
 </html>
