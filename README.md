@@ -34,3 +34,25 @@ Open `index.html` in a browser. If the browser blocks local scripts, use a simpl
 
 ## Double booking behavior
 If Customer A gets 3:00 PM first, Customer B sees 3:00 PM as booked. If both submit nearly simultaneously, the database unique index rejects the second insert and the website tells that customer to choose another time.
+
+
+## Admin Login Setup
+1. In Supabase Dashboard, enable Authentication > Providers > Email.
+2. Create an admin user under Authentication > Users (email + password).
+3. Put the public Supabase URL and anon key in config.js.
+4. Open admin-login.html to log in. admin.html redirects to login when not authenticated.
+5. Never put a Supabase service-role key in config.js or the browser.
+
+
+## Final package contents
+- Logo: `assets/logo.jpg`
+- Owner/team photos: `assets/owner-1.jpg`, `assets/owner-2.jpg`
+- Shop photo: `assets/shop.jpg`
+- UPI QR: `assets/upi-qr.png`
+- Customer flow: service → date/time → UPI/QR payment → payment confirmation checkbox → final booking → printable booking slip
+- Admin flow: `admin-login.html` → Supabase Auth → `admin.html`
+
+### Important
+The admin password is NOT hard-coded into the website ZIP. Create the admin user in Supabase Authentication and type your password there. Do not put service-role keys or passwords into browser files.
+
+The UPI QR is generated for the UPI ID configured for this project. Automatic payment verification is not implemented by a plain UPI deep-link/QR; for verified payments, connect Razorpay or another payment gateway.

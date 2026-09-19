@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Krishna Hair Look — Admin Login</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+</head>
+<body>
+<header class="topbar"><div>✂️ Krishna Hair Look — Admin</div><a href="index.html">Website</a></header>
+<main class="admin-main">
+<section class="booking-card admin-login-card">
+<span class="eyebrow">ADMIN PANEL</span>
+<h1>Admin Login</h1>
+<p>Sirf authorized salon admin yahan login kare.</p>
+<div id="loginNotice" class="notice hidden"></div>
+<form id="loginForm">
+<label>Email
+<input id="adminEmail" type="email" required placeholder="Admin email">
+</label>
+<label>Password
+<input id="adminPassword" type="password" required placeholder="Password">
+</label>
+<button class="btn gold wide" type="submit">🔐 Login</button>
+</form>
+</section>
+</main>
+<script>
+const cfg=window.KHL_CONFIG||null;
+let sb=null;
+if(cfg?.SUPABASE_URL && cfg?.SUPABASE_ANON_KEY && !cfg.SUPABASE_URL.includes("YOUR-"))
+  sb=supabase.createClient(cfg.SUPABASE_URL,cfg.SUPABASE_ANON_KEY);
+const notice=(m,t="error")=>{const n=document.getElementById("loginNotice");n.textContent=m;n.className="notice "+t};
+if(!sb) notice("Pehle config.js me Supabase URL aur public anon key set karein.","error");
+document.getElementById("loginForm").onsubmit=async e=>{
+ e.preventDefault();
+ if(!sb){notice("Supabase configure nahi hai.","error");return}
+ const {error}=await sb.auth.signInWithPassword({
+   email:document.getElementById("adminEmail").value.trim(),
+   password:document.getElementById("adminPassword").value
+ });
+ if(error){notice("Email ya password galat hai.","error");return}
+ location.href="admin.html";
+};
+</script>
+
+<script>
+(function(){
+ const cfg2=window.KHL_CONFIG||null;
+ if(!sb && cfg2?.SUPABASE_URL && cfg2?.SUPABASE_ANON_KEY && !cfg2.SUPABASE_URL.includes("YOUR-")){
+   sb=supabase.createClient(cfg2.SUPABASE_URL,cfg2.SUPABASE_ANON_KEY);
+   document.getElementById("loginNotice").className="notice hidden";
+ }
+})();
+</script>
+</body>
+</html>

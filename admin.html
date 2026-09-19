@@ -1,31 +1,32 @@
 <!doctype html>
 <html lang="hi">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Krishna Hair Look — Admin</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Krishna Hair Look — Admin</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
 </head>
 <body>
-<header class="topbar"><div>✂️ Krishna Hair Look — Admin</div><a href="index.html">Website</a></header>
+<header class="topbar"><div>✂️ Krishna Hair Look — Admin</div><div><a href="index.html">Website</a> <button class="btn" onclick="logout()">Logout</button></div></header>
 <main class="admin-main">
-  <section class="admin-head">
-    <div><span class="eyebrow">ADMIN PANEL</span><h1>Bookings</h1><p>Real-time booking list and slot status.</p></div>
-    <button class="btn" onclick="refreshBookings()">Refresh</button>
-  </section>
-  <div id="adminNotice" class="notice"></div>
-  <section class="stats">
-    <div><b id="todayCount">0</b><span>Today's bookings</span></div>
-    <div><b id="upcomingCount">0</b><span>Upcoming</span></div>
-    <div><b id="bookedSlots">0</b><span>Booked slots today</span></div>
-  </section>
-  <section class="table-card">
-    <div class="table-scroll">
-      <table><thead><tr><th>Name</th><th>Service</th><th>Date</th><th>Time</th><th>Mobile</th><th>Payment</th><th>Status</th></tr></thead>
-      <tbody id="bookingRows"></tbody></table>
-    </div>
-  </section>
+<section class="admin-head">
+<div><span class="eyebrow">ADMIN PANEL</span><h1>Bookings</h1><p>Real-time booking list and slot status.</p></div>
+<button class="btn" onclick="refreshBookings()">Refresh</button>
+</section>
+<div id="adminNotice" class="notice"></div>
+<section class="stats">
+<div><b id="todayCount">0</b><span>Today's bookings</span></div>
+<div><b id="upcomingCount">0</b><span>Upcoming</span></div>
+<div><b id="bookedSlots">0</b><span>Booked slots today</span></div>
+</section>
+<section class="table-card">
+<div class="table-scroll">
+<table><thead><tr><th>Name</th><th>Service</th><th>Date</th><th>Time</th><th>Mobile</th><th>Payment</th><th>Status</th></tr></thead>
+<tbody id="bookingRows"></tbody></table>
+</div>
+</section>
 </main>
 <script src="admin.js"></script>
 </body>

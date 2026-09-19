@@ -1,87 +1,80 @@
 <!doctype html>
 <html lang="hi">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Krishna Hair Look — Online Booking</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Krishna Hair Look — Online Booking</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
 </head>
 <body>
-<header class="topbar"><div>✂️ Krishna Hair Look</div><a href="admin.html">Admin</a></header>
-<main>
-  <section class="hero">
-    <div>
+<header class="topbar">
+  <a class="brand" href="index.html"><img src="assets/logo.jpg" alt="Krishna Hair Look logo"><span>Krishna Hair Look</span></a>
+  <nav><a href="#services">Services</a><a href="#booking">Booking</a><a href="#about">About</a><a href="admin-login.html">🔐 Admin Login</a></nav>
+</header>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-copy">
       <span class="eyebrow">KRISHNA HAIR LOOK</span>
-      <h1>Style That Defines You</h1>
-      <p>Online booking with automatic time-slot protection.</p>
-      <a class="btn gold" href="#booking">Book Appointment</a>
+      <h1>Style • Care • Confidence</h1>
+      <p>Professional hair services with easy online appointment booking.</p>
+      <a class="btn gold" href="#booking">📅 Book Appointment</a>
     </div>
-  </section>
-
-  <section class="services">
-    <h2>Our Services</h2>
-    <div class="cards">
-      <button class="service-card" data-service="Shaving" data-price="50"><b>Shaving</b><span>₹50</span></button>
-      <button class="service-card" data-service="Haircut" data-price="70"><b>Haircut</b><span>₹70</span></button>
-      <button class="service-card" data-service="Hair Colour" data-price="100"><b>Hair Colour</b><span>₹100</span></button>
+    <div class="hero-people">
+      <div class="person"><img src="assets/owner-1.jpg" alt="Salon owner"><span>Salon Owner</span></div>
+      <div class="person"><img src="assets/owner-2.jpg" alt="Salon team"><span>Salon Team</span></div>
     </div>
-  </section>
-
-  <section id="booking" class="booking-wrap">
-    <div class="booking-info">
-      <span class="eyebrow">BOOK YOUR APPOINTMENT</span>
-      <h2>Choose service, date & time</h2>
-      <p>🟢 Available &nbsp; 🔴 Booked &nbsp; ⚪ Closed</p>
-      <div id="notice" class="notice hidden"></div>
-    </div>
-
-    <form id="bookingForm" class="booking-card">
-      <label>Service
-        <select id="service" required>
-          <option value="">Select service</option>
-          <option value="Shaving" data-price="50">Shaving — ₹50</option>
-          <option value="Haircut" data-price="70">Haircut — ₹70</option>
-          <option value="Hair Colour" data-price="100">Hair Colour — ₹100</option>
-        </select>
-      </label>
-
-      <label>Date
-        <input id="date" type="date" required>
-      </label>
-
-      <label>Available Time
-        <div id="slots" class="slots"></div>
-      </label>
-      <input id="time" type="hidden" required>
-
-      <label>Full Name
-        <input id="name" required placeholder="Your name">
-      </label>
-
-      <label>Mobile Number
-        <input id="mobile" required inputmode="numeric" pattern="[0-9]{10}" maxlength="10" placeholder="10 digit mobile">
-      </label>
-
-      <div class="payment-box">
-        <b>Payment</b>
-        <p>UPI: <strong>gsain16@ibl</strong></p>
-        <p class="small">Customer can pay using any UPI app. Automatic payment verification requires a payment gateway.</p>
-      </div>
-      <div class="summary"><span>Selected</span><strong id="summaryText">—</strong></div>
-      <button class="btn gold wide" type="submit">Confirm Booking</button>
-      <p class="small">UPI ID: gsain16@ibl. Automatic payment verification requires a payment gateway.</p>
-    </form>
-  </section>
-</main>
-
-<div id="successModal" class="modal hidden">
-  <div class="modal-card">
-    <h2>✅ Booking Confirmed</h2>
-    <p id="successText"></p>
-    <button class="btn gold" onclick="closeModal()">Done</button>
   </div>
-</div>
+</section>
+
+<section id="services" class="section">
+  <div class="section-title"><span class="eyebrow">OUR SERVICES & PRICES</span><h2>Choose Your Service</h2></div>
+  <div class="cards">
+    <button class="service-card" data-service="Shaving" data-price="50"><span>🪒</span><b>Shaving</b><strong>₹50</strong></button>
+    <button class="service-card" data-service="Haircut" data-price="70"><span>✂️</span><b>Haircut</b><strong>₹70</strong></button>
+    <button class="service-card" data-service="Hair Colour" data-price="100"><span>🎨</span><b>Hair Colour</b><strong>₹100</strong></button>
+  </div>
+</section>
+
+<section id="booking" class="section booking-section">
+  <div class="section-title"><span class="eyebrow">BOOK YOUR APPOINTMENT</span><h2>Payment → Confirm Booking → Booking Slip</h2><p>🟢 Available &nbsp; 🔴 Booked</p></div>
+  <div id="notice" class="notice hidden"></div>
+  <form id="bookingForm" class="booking-card">
+    <div class="form-grid">
+      <label>Service<select id="service" required><option value="">Select service</option><option value="Shaving" data-price="50">Shaving — ₹50</option><option value="Haircut" data-price="70">Haircut — ₹70</option><option value="Hair Colour" data-price="100">Hair Colour — ₹100</option></select></label>
+      <label>Date<input id="date" type="date" required></label>
+    </div>
+    <label>Available Time<div id="slots" class="slots"></div></label><input id="time" type="hidden" required>
+    <div class="form-grid">
+      <label>Full Name<input id="name" required placeholder="Your name"></label>
+      <label>Mobile Number<input id="mobile" required inputmode="numeric" pattern="[0-9]{10}" maxlength="10" placeholder="10 digit mobile"></label>
+    </div>
+
+    <div class="payment-box">
+      <div><span class="eyebrow">STEP 1 — PAYMENT FIRST</span><h3>💳 UPI / QR Code Payment</h3></div>
+      <div class="payment-grid">
+        <div><p>UPI ID: <strong id="upiId">gsain16@ibl</strong></p><p class="small">Service select करने के बाद Pay via UPI दबाएँ या QR scan करें.</p><button type="button" class="btn gold wide" id="upiPayBtn">📱 Pay via UPI</button></div>
+        <div class="qr-card"><img src="assets/upi-qr.png" alt="UPI payment QR code"><small>Scan & Pay</small></div>
+      </div>
+      <label class="payment-check"><input type="checkbox" id="paymentDone"> मैंने payment कर दिया है</label>
+      <p id="paymentNotice" class="small"></p>
+    </div>
+
+    <div class="summary"><span>Selected</span><strong id="summaryText">—</strong></div>
+    <button class="btn gold wide" type="submit">✅ STEP 2 — Final Confirm Booking</button>
+    <p class="small">Booking confirm होने के बाद booking slip मिलेगी. Slot database में lock होगा ताकि same date/time दोबारा book न हो.</p>
+  </form>
+</section>
+
+<section id="about" class="section about-grid">
+  <div><span class="eyebrow">OUR SHOP</span><h2>Krishna Hair Look</h2><p>Salon, hair styling, hair care और colour services के लिए online appointment सुविधा.</p><img class="shop-photo" src="assets/shop.jpg" alt="Krishna Hair Look shop"></div>
+  <div><span class="eyebrow">OUR TEAM</span><h2>Meet Our Team</h2><div class="team-grid"><div class="team-card"><img src="assets/owner-1.jpg" alt="Salon owner"><b>Salon Owner</b></div><div class="team-card"><img src="assets/owner-2.jpg" alt="Salon team"><b>Salon Team</b></div></div></div>
+</section>
+
+<section class="admin-promo"><div><span class="eyebrow">ADMIN PANEL</span><h2>Bookings को एक जगह manage करें</h2><p>Secure login के बाद admin सभी bookings, dates, times और payment status देख सकता है.</p></div><a class="btn" href="admin-login.html">🔐 Open Admin Login</a></section>
+
+<div id="successModal" class="modal hidden"><div class="modal-card" id="bookingSlip"><img src="assets/logo.jpg" class="slip-logo" alt="Krishna Hair Look"><h2>🧾 Booking Slip</h2><p id="successText"></p><div class="slip-details"><p><b>Customer:</b> <span id="slipName"></span></p><p><b>Service:</b> <span id="slipService"></span></p><p><b>Date:</b> <span id="slipDate"></span></p><p><b>Time:</b> <span id="slipTime"></span></p><p><b>Payment:</b> <span id="slipPayment">Payment marked as done</span></p></div><div class="slip-actions"><button class="btn gold" onclick="printBookingSlip()">🖨️ Print / Save PDF</button><button class="btn" onclick="closeModal()">Done</button></div></div></div>
 <script src="app.js"></script>
-</body>
-</html>
+</body></html>
