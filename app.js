@@ -71,7 +71,7 @@ $("bookingForm").onsubmit=async e=>{
      if("Notification" in window && Notification.permission==="granted"){
        const reg=await navigator.serviceWorker?.ready;
        const body=`New booking: ${booking.name} • ${booking.service} • ${booking.date} • ${booking.time}`;
-       if(reg) reg.showNotification("🔔 New Krishna Hair Look Booking",{body,icon:"assets/logo.jpg",tag:"new-booking"});
+       if(reg) reg.showNotification("🔔 New Krishna Hair Look Booking",{body,icon:"./assets/logo.jpg",tag:"new-booking"});
        else new Notification("🔔 New Krishna Hair Look Booking",{body});
      }
    }catch(_){}
@@ -110,7 +110,7 @@ async function enableOwnerNotifications(){
     notice("✅ Trial notifications ON हैं. इस device पर नई booking का alert आएगा.","");
     if(navigator.serviceWorker?.ready){
       const reg=await navigator.serviceWorker.ready;
-      reg.showNotification("Krishna Hair Look", {body:"Owner notifications are enabled.", icon:"assets/logo.jpg"});
+      reg.showNotification("Krishna Hair Look", {body:"Owner notifications are enabled.", icon:"./assets/logo.jpg"});
     }
   }else{
     notice("Notification permission allow करें.","error");
