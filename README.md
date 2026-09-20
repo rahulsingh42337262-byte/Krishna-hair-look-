@@ -5,7 +5,7 @@ This version is built around the flow discussed:
 - 🟢 Available slots are selectable.
 - 🔴 Already-booked slots are blocked.
 - A database-level unique index prevents two customers from successfully taking the same date + time, even if they submit at nearly the same moment.
-- Admin panel shows bookings.
+- Admin panel/login removed in this trial version.
 - Demo mode works in the browser with localStorage.
 - Supabase SQL and Edge Function skeletons are included for the real database, WhatsApp notification, and Razorpay order flow.
 
@@ -50,9 +50,12 @@ If Customer A gets 3:00 PM first, Customer B sees 3:00 PM as booked. If both sub
 - Shop photo: `assets/shop.jpg`
 - UPI QR: `assets/upi-qr.png`
 - Customer flow: service → date/time → UPI/QR payment → payment confirmation checkbox → final booking → printable booking slip
-- Admin flow: `admin-login.html` → Supabase Auth → `admin.html`
+- Owner notification trial: browser notification on the device where the site is open and notification permission is granted.
 
 ### Important
 The admin password is NOT hard-coded into the website ZIP. Create the admin user in Supabase Authentication and type your password there. Do not put service-role keys or passwords into browser files.
 
 The UPI QR is generated for the UPI ID configured for this project. Automatic payment verification is not implemented by a plain UPI deep-link/QR; for verified payments, connect Razorpay or another payment gateway.
+
+## Notification trial
+This version includes a simple browser notification trial. Open the site over HTTPS (or localhost), tap **🔔 Notifications**, allow notifications, then make a test booking. The same device/browser will receive a notification. For notifications to a different owner phone, a real push service/backend (for example Firebase Cloud Messaging) must be configured.
