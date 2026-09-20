@@ -1,14 +1,7 @@
-Krishna Hair Look - Telegram setup
+Krishna Hair Look - Telegram/Google Apps Script connection
 
-1. index.html keeps the existing embedded photos/logo/QR and does NOT contain the Telegram bot token.
-2. Deploy supabase/functions/telegram-booking/index.ts as a Supabase Edge Function.
-3. Add these Supabase secrets:
-   TELEGRAM_BOT_TOKEN = YOUR_NEW_BOT_TOKEN
-   TELEGRAM_CHAT_ID = 8670536683
-4. Put the deployed function URL into:
-   const TELEGRAM_BOOKING_ENDPOINT = "";
-   in index.html
-5. Do not share the bot token in chat or put it in index.html.
+The supplied index.html is connected to the following Apps Script Web App URL:
+https://script.google.com/macros/s/AKfycby-ZbRy59tZD4QHPjJwHbFsjZYaRZxDa_VLk-1jR3JGsk_t1mo2LKLAbw-0Brcf0pEB/exec
 
-IMPORTANT:
-If the bot token was previously exposed, revoke/regenerate it in BotFather before using it.
+Booking submit sends JSON by POST to this endpoint. The Telegram bot token is NOT stored in index.html.
+Important: the Apps Script deployment itself must be accessible and contain the doPost(e) code that writes to the Sheet and sends the Telegram message.
