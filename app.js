@@ -66,16 +66,7 @@ $("bookingForm").onsubmit=async e=>{
    $("slipDate").textContent=booking.date;
    $("slipTime").textContent=booking.time;
    $("slipPayment").textContent="Payment marked as done";
-   $("successModal").classList.remove("hidden");
-   try{
-     if("Notification" in window && Notification.permission==="granted"){
-       const reg=await navigator.serviceWorker?.ready;
-       const body=`New booking: ${booking.name} • ${booking.service} • ${booking.date} • ${booking.time}`;
-       if(reg) reg.showNotification("🔔 New Krishna Hair Look Booking",{body,icon:"./assets/logo.jpg",tag:"new-booking"});
-       else new Notification("🔔 New Krishna Hair Look Booking",{body});
-     }
-   }catch(_){}
-   selectedTime=""; $("time").value=""; $("bookingForm").reset(); $("date").value=today.toISOString().slice(0,10); await renderSlots();
+   $("successModal").classList.remove("hidden"); selectedTime=""; $("time").value=""; $("bookingForm").reset(); $("date").value=today.toISOString().slice(0,10); await renderSlots();
  }catch(err){console.error(err);notice("Booking save नहीं हो पाई. Backend configuration check करें.","error")}
 }
 function closeModal(){$("successModal").classList.add("hidden")}
@@ -100,22 +91,4 @@ function printBookingSlip(){
   </div></body></html>`);
   w.document.close(); w.focus(); w.print();
 }
-
-// Simple trial owner notification (same device/browser).
-const OWNER_NAMES = "Govind Sen & Suresh Kotiya";
-async function enableOwnerNotifications(){
-  if(!("Notification" in window)){ notice("इस device/browser में notifications supported नहीं हैं.","error"); return; }
-  const p = await Notification.requestPermission();
-  if(p === "granted"){
-    notice("✅ Trial notifications ON हैं. इस device पर नई booking का alert आएगा.","");
-    if(navigator.serviceWorker?.ready){
-      const reg=await navigator.serviceWorker.ready;
-      reg.showNotification("Krishna Hair Look", {body:"Owner notifications are enabled.", icon:"./assets/logo.jpg"});
-    }
-  }else{
-    notice("Notification permission allow करें.","error");
-  }
-}
-$("enableNotifications")?.addEventListener("click",enableOwnerNotifications);
-
 window.closeModal=closeModal; window.printBookingSlip=printBookingSlip;

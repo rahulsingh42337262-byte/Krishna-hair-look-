@@ -10,7 +10,7 @@
 <body>
 <header class="topbar">
   <a class="brand" href="index.html"><img src="./assets/logo.jpg" alt="Krishna Hair Look logo"><span>Krishna Hair Look</span></a>
-  <nav><button id="enableNotifications" class="nav-notify" type="button">🔔 Notifications</button><a href="#services">Services</a><a href="#booking">Booking</a><a href="#about">About</a></nav>
+  <nav><a href="#services">Services</a><a href="#booking">Booking</a><a href="#about">About</a></nav>
 </header>
 
 <section class="hero">
@@ -23,8 +23,8 @@
       <a class="btn gold" href="#booking">📅 Book Appointment</a>
     </div>
     <div class="hero-people">
-      <div class="person"><img src="./assets/owner-1.jpg" alt="Salon owner"><span>Salon Owner</span></div>
-      <div class="person"><img src="./assets/owner-2.jpg" alt="Salon team"><span>Salon Team</span></div>
+      <div class="person"><img src="./assets/owner-1.jpg" alt="Salon owner"><span>Suresh Kotiya • 8955817068</span></div>
+      <div class="person"><img src="./assets/owner-2.jpg" alt="Salon team"><span>Govind Sen • 9783242589</span></div>
     </div>
   </div>
 </section>
@@ -70,18 +70,20 @@
 
 <section id="about" class="section about-grid">
   <div><span class="eyebrow">OUR SHOP</span><h2>Krishna Hair Look</h2><p>Salon, hair styling, hair care और colour services के लिए online appointment सुविधा.</p><img class="shop-photo" src="./assets/shop.jpg" alt="Krishna Hair Look shop"></div>
-  <div><span class="eyebrow">OUR TEAM</span><h2>Meet Our Team</h2><div class="team-grid"><div class="team-card"><img src="./assets/owner-1.jpg" alt="Salon owner"><b>Salon Owner</b></div><div class="team-card"><img src="./assets/owner-2.jpg" alt="Salon team"><b>Salon Team</b></div></div></div>
+  <div><span class="eyebrow">OUR TEAM</span><h2>Meet Our Team</h2><div class="team-grid"><div class="team-card"><img src="./assets/owner-1.jpg" alt="Salon owner"><b>Suresh Kotiya</b></div><div class="team-card"><img src="./assets/owner-2.jpg" alt="Salon team"><b>Govind Sen</b></div></div></div>
+</section>
+
+
+
+
+<section class="owner-contact section">
+  <div class="section-title"><span class="eyebrow">CONTACT</span><h2>Shop Owners</h2></div>
+  <div class="owner-contact-grid">
+    <a class="owner-contact-card" href="tel:8955817068"><strong>Suresh Kotiya</strong><span>📞 8955817068</span></a>
+    <a class="owner-contact-card" href="tel:9783242589"><strong>Govind Sen</strong><span>📞 9783242589</span></a>
+  </div>
 </section>
 
 <div id="successModal" class="modal hidden"><div class="modal-card" id="bookingSlip"><img src="./assets/logo.jpg" class="slip-logo" alt="Krishna Hair Look"><h2>🧾 Booking Slip</h2><p id="successText"></p><div class="slip-details"><p><b>Customer:</b> <span id="slipName"></span></p><p><b>Service:</b> <span id="slipService"></span></p><p><b>Date:</b> <span id="slipDate"></span></p><p><b>Time:</b> <span id="slipTime"></span></p><p><b>Payment:</b> <span id="slipPayment">Payment marked as done</span></p></div><div class="slip-actions"><button class="btn gold" onclick="printBookingSlip()">🖨️ Print / Save PDF</button><button class="btn" onclick="closeModal()">Done</button></div></div></div>
-<script>
-document.querySelectorAll("img").forEach(img => {
-  img.addEventListener("error", () => {
-    img.style.visibility = "visible";
-    img.style.opacity = "1";
-    img.alt = img.alt || "Image unavailable";
-  });
-});
-</script>
-<script src="app.js"></script><script>if("serviceWorker" in navigator){navigator.serviceWorker.register("sw.js").catch(()=>{});}</script>
+<script src="app.js"></script>
 </body></html>
