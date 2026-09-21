@@ -137,7 +137,7 @@ $("bookingForm").addEventListener("submit",async e=>{e.preventDefault();if(!sele
   Keep the Telegram bot token on the server, NEVER in this HTML.
   After creating the backend/serverless endpoint, put its URL below.
 */
-const TELEGRAM_BOOKING_ENDPOINT = "https://script.google.com/macros/s/AKfycbxzsqXRkozEN8lnUwqvlsjOUVv_WyA_U1hRBp9bAi28krCaewIsbR8vgXvG6cm40112/exec";
+const TELEGRAM_BOOKING_ENDPOINT = "https://script.google.com/macros/s/AKfycbyu39UEDqmGD5hUTnVPMXLuXQcdSGYo4tydTLfPDrgfPKobgwUoZc50ocgXFwdzHMZBtQ/exec";
 
 async function sendBookingToTelegram(bookingData) {
   if (!TELEGRAM_BOOKING_ENDPOINT) return { skipped: true };
